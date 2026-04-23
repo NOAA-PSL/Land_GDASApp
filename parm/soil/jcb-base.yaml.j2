@@ -37,7 +37,7 @@ soil_increment_time_fv3: "{{ bkg_time_fv3 }}"
 
 # Analysis standard things
 # ------------------------
-analysis_variables: [soilMoistureVolumetric]
+analysis_variables: [soilMoistureVolumetric, slc, stc, air_temperature_at_2m]
 minimizer: DRPCG
 final_diagnostics_departures: anlmob
 final_prints_frequency: PT3H
@@ -178,7 +178,7 @@ soil_analysis_ensemble_path: ./anl/mem%mem%
 # -------------------------
 local_ensemble_da_solver: Deterministic LETKF   #GETKF
 
-increment_variables: [stc, air_temperature_at_2m] #, smc, sphum] 
+increment_variables: [stc, slc, air_temperature_at_2m, soilMoistureVolumetric] #, smc, sphum] 
 #[ua,va,DZ,delp,t,ps,sphum,ice_wat,liq_wat,o3mr]
 
 # Veritcal localization for GETKF
